@@ -1,0 +1,34 @@
+# Ignore everything in .idea
+.idea
+
+*.mo
+*.pyo
+*.pyc
+.sass-cache/
+yarn-error.log
+node_modules/
+venv/
+.cache/
+
+.data*/
+
+instagramania/django.env
+instagramania/settings/local.py
+instagramania/settings/local_test.py
+instagramania/db.sqlite3
+instagramania/assets/
+
+instagramania/.cache
+instagramania/.pytest_cache
+instagramania/.coverage
+instagramania/coverage
+instagramania/cover/
+
+# Node Project files
+app/build/
+app/coverage/
+
+# Missing translations file
+**/locales/**/*.missing.json
+
+
