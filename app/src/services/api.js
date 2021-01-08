@@ -64,6 +64,13 @@ const api = createSagaRouter(
             forgotPassword: 'user/forgot_password',
             forgotPasswordToken: 'user/forgot_password/token',
         },
+        posts: {
+            list: 'sentiment/posts/',
+            detail: 'sentiment/posts/${pk}',
+        },
+        comments: {
+            from_post: 'sentiment/comments/${pk}/from_post/',
+        },
     },
     {
         apiRoot: SETTINGS.BACKEND_SITE_URL + SETTINGS.API_BASE,

@@ -57,6 +57,7 @@ TGR_PASSWORD_RECOVERY_URL = "/auth/reset-password/%s"
 INSTALLED_APPS = [
     # Local apps
     "accounts",
+    "sentiment_api",
     "instagramania",
     # Third-party apps
     "rest_framework",
@@ -279,6 +280,7 @@ SILENCED_SYSTEM_CHECKS = [
 REST_FRAMEWORK = {
     # Disable Basic auth
     "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework_simplejwt.authentication.JWTAuthentication",
         # By default api session authentication is not used
         # "rest_framework.authentication.SessionAuthentication",

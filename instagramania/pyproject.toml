@@ -36,6 +36,18 @@ django-cors-headers = "==3.0.*"
 django-filter = "==2.1.*"
 tg-react = "*"
 
+
+#
+#Machine learnign librarys
+joblib = "==1.0.0"
+emoji = "==0.5.4"
+bs4 = "==0.0.1"
+instaloader = "==4.4.4"
+nltk = "==3.5"
+regex = "==2020.6.8"
+
+
+
 tg-utils = {version = "*", extras = ["model-hash"]}
 
 [tool.poetry.dev-dependencies]

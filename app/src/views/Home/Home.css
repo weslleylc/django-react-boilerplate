@@ -1,5 +1,6 @@
 .Home {
     text-align: center;
+
 }
 
 .Home-logo {
@@ -8,7 +9,6 @@
 }
 
 .Home-header {
-    background-color: #222;
     height: 150px;
     padding: 20px;
     color: white;
@@ -16,6 +16,7 @@
 
 .Home-intro {
     font-size: large;
+    color: white;
 }
 
 .Home-resources {

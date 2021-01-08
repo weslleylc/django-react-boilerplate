@@ -66,7 +66,7 @@ export const loadSettings = () => {
                 cfg.WORKER_ID = cluster.worker.id;
             }
             // Proxy Django static assets through Node
-            // This is here so the `Site` model in the backend can be used to point to the frontend.
+            // This is here so the `Site` ml in the backend can be used to point to the frontend.
             cfg.APP_PROXY = {
                 [cfg.DJANGO_STATIC_URL]: cfg.BACKEND_SITE_URL,
             };

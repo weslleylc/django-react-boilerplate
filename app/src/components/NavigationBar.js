@@ -58,7 +58,7 @@ const NavigationBar = ({ user, isLoggedIn }) => {
     }
 
     return (
-        <Navbar color="faded" light expand="md">
+        <Navbar color="faded" dark expand="md">
             <NavbarBrand tag={Link} to={urlResolve('landing')}>
                 HOME
             </NavbarBrand>
@@ -68,6 +68,26 @@ const NavigationBar = ({ user, isLoggedIn }) => {
                         {t('Restricted view')}
                     </NavLink>
                 </NavItem>
+                {isLoggedIn?(
+                    <NavItem>
+                        <NavLink tag={Link} to={urlResolve('posts-list')}>
+                            {t('Posts')}
+                        </NavLink>
+                    </NavItem>
+                    ):null
+                }
+
+                {isLoggedIn?(
+                    <NavItem>
+                        <NavLink tag={Link} to={urlResolve('create-post')}>
+                            {t('New Post')}
+                        </NavLink>
+                    </NavItem>
+                    ):null
+                }
+
+
+
                 {devUrls}
             </Nav>
             {authNav}

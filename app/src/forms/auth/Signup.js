@@ -14,7 +14,7 @@ import { getFormPropTypes } from 'utils/types';
 const Signup = ({ status, isSubmitting }) => {
     const { t } = useTranslation();
     return (
-        <Form>
+        <Form >
             <FormField
                 id="name"
                 name="name"

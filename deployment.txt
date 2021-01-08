@@ -1,0 +1,27 @@
+docker-compose -f docker-compose.production.yml build
+
+docker network create instagramania_default
+docker network create instagramania_nginx
+docker network create instagramania_postgres
+
+
+docker run --name nginx --network instagramania_nginx -v /var/lib/docker-nginx/files/instagramania/assets:/usr/share/nginx/html:ro -p 80:80 -d nginx
+docker run --name postgres-12 --network instagramania_postgres -v /var/log/instagramania:/var/lib/postgresql/data -e POSTGRES_PASSWORD=instagramanaia  -e POSTGRES_USER=instagramanaia -p 5432:5432 -d postgres:12
+
+
+docker-compose -f docker-compose.production.yml up
+docker-compose -f docker-compose.production.yml down
+
+#Docker commands
+# stop all containers
+docker container stop $(docker container ls -aq)
+# remove all containers
+docker container rm $(docker container ls -aq)
+# See networks
+docker network ls
+#Inspect network
+docker inspect postgres -f "{{json .NetworkSettings.Networks }}"
+
+
+docker container rm postgres
+

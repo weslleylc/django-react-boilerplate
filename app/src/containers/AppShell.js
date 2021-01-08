@@ -1,3 +1,5 @@
+
+/* eslint-disable */
 import { ErrorBoundary } from '@thorgate/spa-errors';
 import { PendingDataManager } from '@thorgate/spa-pending-data';
 import React from 'react';
@@ -10,11 +12,19 @@ import { RouterMatchShape, RouterRouteShape } from 'utils/types';
 
 // Load main styles
 import 'styles/main.scss';
+import 'styles/backgound.scss';
+
 
 const App = ({ route, match }) => (
     <ErrorBoundary onComponentError={onComponentError}>
+
         <DefaultHeader canonical={match.url} />
         <NavigationBar />
+
+        {[...Array(30)].map( (e, i) =>{
+            return  <div key={i} className="particle"></div>
+        })}
+
         <PendingDataManager>
             <RenderChildren route={route} />
         </PendingDataManager>

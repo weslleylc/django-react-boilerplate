@@ -7,9 +7,9 @@ const AuthLayout = ({ children }) => (
     <>
         <Helmet defaultTitle="Authentication" />
         <Container>
-            <Row>
-                <Col lg={8} className="py-5 ml-auto mr-auto">
-                    <Card body>{children}</Card>
+            <Row >
+                <Col lg={8} className="py-5 ml-auto mr-auto ">
+                    <Card body className="bg-dark text-light">{children}</Card>
                 </Col>
             </Row>
         </Container>

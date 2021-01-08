@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
@@ -13,7 +14,7 @@ const DefaultHeader = ({ canonical }) => {
             <html lang={i18n.language} />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta charSet="utf-8" />
-            <body className="bg-light" />
+            {/*<body  />*/}
             <meta name="description" content="Default description" />
             <link rel="canonical" href={`${SETTINGS.SITE_URL}${canonical}`} />
         </Helmet>

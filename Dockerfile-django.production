@@ -51,6 +51,7 @@ RUN find /usr/local \
     )" \
   && apk add --virtual .rundeps $runDeps
 
+
 # Remove build dependencies
 RUN apk del .build-deps
 
@@ -62,6 +63,17 @@ WORKDIR /app
 
 # Compile translations to .mo files
 RUN DJANGO_DOCKER_BUILD=True python manage.py compilemessages
+
+# install pandas and sckit
+RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+
+RUN apk add --update --no-cache ca-certificates gcc g++ curl openblas-dev@community
+
+RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
+
+RUN pip3 install --no-cache-dir --disable-pip-version-check scikit-learn==0.23.1 pandas
+# pandas install finish
+
 
 # Run Gunicorn by default
 CMD gunicorn instagramania.wsgi:application --workers 2 --bind :80

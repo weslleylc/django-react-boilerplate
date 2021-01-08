@@ -5,6 +5,9 @@ import { userReducer } from '@thorgate/spa-permissions';
 import { connectRouter } from 'connected-react-router';
 import { combineReducers } from 'redux';
 
+import posts from 'ducks/posts';
+
+
 export default (history) =>
     combineReducers({
         router: connectRouter(history),
@@ -12,4 +15,5 @@ export default (history) =>
         entities: entitiesReducer,
         loading: loadingReducer,
         user: userReducer,
+        posts,
     });
