@@ -1,5 +1,8 @@
 # instagramania
 
+Check the other repository for Heroku deployment [https://github.com/weslleylc/instagramania](https://github.com/weslleylc/instagramania)
+
+
 TODO: verify that the following info is correct:
 
  - Python:  3.8
